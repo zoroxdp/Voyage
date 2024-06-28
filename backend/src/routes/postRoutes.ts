@@ -18,7 +18,6 @@ export const postRouter = new Hono<{
 postRouter.use(async (c, next) => {
   const header = c.req.header("authorization") || "";
   const token = header.split(" ")[1];
-
   try {
     const user = await verify(token, c.env.jwtSecret);
     if (user) {
@@ -97,22 +96,44 @@ postRouter.get('/bulk', async (c) => {
     datasourceUrl: c.env.DATABASE_URL
   }).$extends(withAccelerate());
 
-  const blogs = await prisma.post.findMany({});
+  const blogs = await prisma.post.findMany({
+    select: {
+      content: true,
+      title: true,
+      id: true,
+      author: {
+        select: {
+          name: true
+        }
+      }
+    }
+  });
   return c.json({
     blogs
   })
 })
 
 postRouter.get('/:id', async (c) => {
-  const id = c.req.param('id');
+  const id = c.req.param("id");
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL
   }).$extends(withAccelerate());
   const post = await prisma.post.findUnique({
     where: {
       id: String(id)
+    },
+    select: {
+      content: true,
+      id: true,
+      title: true,
+      author: {
+        select: {
+          name: true
+        }
+      }
     }
   })
+  console.log(post);
   return c.json(post);
 })
 
