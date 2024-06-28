@@ -7,8 +7,10 @@ export const Blog = () => {
   const { loading, blog } = useBlog({ id: id || "" });
   if (loading) return <div>Loading</div>
   else {
-    return <div>
-      <BlogPage title={blog!.title} content={blog!.content} name={blog!.author.name} />
-    </div>
+    return (
+      <div>
+        <BlogPage title={blog!.title} content={blog!.content} name={blog!.author.name} />
+      </div>
+    )
   }
 }
