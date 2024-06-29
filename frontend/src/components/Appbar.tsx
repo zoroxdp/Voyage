@@ -7,7 +7,7 @@ export const Appbar = () => {
       <Link to="/blogs">
         <div className="flex items-center">
           <img className="w-10 h-10 mr-2" src="/assets/Voyage.png" alt="logo" />
-          <div className="cursor-default font-bold text-3xl">Voyage</div>
+          <div className="cursor-default font-bold text-3xl">VӨYΛGΣ</div>
         </div>
       </Link>
       <div>

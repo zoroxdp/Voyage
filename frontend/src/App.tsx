@@ -13,7 +13,6 @@ function App() {
   return (
     <><div className="min-h-screen bg-cyan-100">
       <BrowserRouter>
-        <Appbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<Signup />} />

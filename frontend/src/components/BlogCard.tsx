@@ -26,7 +26,7 @@ export const BlogCard = ({ authorName, id, title, content, publishedDate }: Blog
         {title}
       </div>
       <div className="text-lg text-slate-800">
-        {content.slice(0, 150) + "..."}
+        <div dangerouslySetInnerHTML={{ __html: content.slice(0, 200) + "..." }} />
       </div>
       <div>
         {`${Math.ceil(content.length / 350)} minutes to read`}
@@ -46,13 +46,13 @@ export function Avatar({ name, type = 'card' }: { name: string, type: string }) 
 export function BlogCardSkeleton() {
   return <div className="flex justify-center">
     <div role="status" className="flex flex-col gap-2 p-2 bg-teal-100 w-screen h-44 shadow-lg max-w-5xl animate-pulse">
-    <div className="h-2 bg-gray-300 rounded-full  w-48 mb-4"></div>
-    <div className="h-6 bg-gray-300 rounded-full  max-w-[180px] mb-2.5"></div>
-    <div className="h-2.5 bg-gray-300 rounded-full  max-w-[720px] mb-2.5"></div>
-    <div className="h-2.5 bg-gray-300 rounded-full  max-w-[330px] mb-2.5"></div>
-    <div className="h-2.5 bg-gray-300 rounded-full  max-w-[300px] mb-2.5"></div>
-    <div className="h-2.5 bg-gray-300 rounded-full  max-w-[360px]"></div>
-    <span className="sr-only">Loading...</span>
+      <div className="h-2 bg-gray-300 rounded-full  w-48 mb-4"></div>
+      <div className="h-6 bg-gray-300 rounded-full  max-w-[180px] mb-2.5"></div>
+      <div className="h-2.5 bg-gray-300 rounded-full  max-w-[720px] mb-2.5"></div>
+      <div className="h-2.5 bg-gray-300 rounded-full  max-w-[330px] mb-2.5"></div>
+      <div className="h-2.5 bg-gray-300 rounded-full  max-w-[300px] mb-2.5"></div>
+      <div className="h-2.5 bg-gray-300 rounded-full  max-w-[360px]"></div>
+      <span className="sr-only">Loading...</span>
     </div>
   </div>
 }
