@@ -18,7 +18,6 @@ export const Blogs = () => {
       <BlogCardSkeleton />
       <BlogCardSkeleton />
       <BlogCardSkeleton />
-      <BlogCardSkeleton />
     </div>
   } else {
     return <div>
