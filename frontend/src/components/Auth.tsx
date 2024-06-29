@@ -31,7 +31,7 @@ export const Auth = ({ authType }: { authType: "signup" | "signin" }) => {
     <div className="mt-32">
       <div className="flex justify-center items-center text-center">
         <div>
-          <img className="w-48 h-48 mx-auto" src="src/assets/Voyage.png" alt="logo" />
+          <img className="w-48 h-48 mx-auto" src="/assets/Voyage.png" alt="logo" />
           <div className="text-4xl font-bold px-20">
             {authType === 'signup' ? 'Create Account' : 'Login to Voyage'}
           </div>

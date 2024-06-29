@@ -6,7 +6,7 @@ export const Appbar = () => {
     <div className="bg-cyan-200 border-b-2 border-gray-300 flex items-center justify-between mb-4 pl-4 pr-1 py-1">
       <Link to="/blogs">
         <div className="flex items-center">
-          <img className="w-10 h-10 mr-2" src="public/assets/Voyage.png" alt="logo" />
+          <img className="w-10 h-10 mr-2" src="/assets/Voyage.png" alt="logo" />
           <div className="cursor-default font-bold text-3xl">Voyage</div>
         </div>
       </Link>
